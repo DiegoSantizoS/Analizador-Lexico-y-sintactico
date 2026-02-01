@@ -8,7 +8,8 @@ package PRUEBA;
  *lol xd 
  * How many dudes
  * @author DFSS
- */
+ * LOLOLOLOLOLOL
+ */ 
 public class NewClass {
     
 }

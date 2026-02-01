@@ -6,7 +6,7 @@ package PRUEBA;
 
 /**
  *lol xd 
- * dudes
+ * How many dudes
  * @author DFSS
  */
 public class NewClass {

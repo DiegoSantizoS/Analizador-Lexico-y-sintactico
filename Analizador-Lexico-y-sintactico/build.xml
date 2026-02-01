@@ -72,7 +72,7 @@
     -->
         <property name="antlr.jar" value="lib/antlr-4.13.2-complete.jar"/>
         <property name="grammar.file" value="src/grammar/Lenguaje.g4"/>
-        <property name="gen.dir" value="build/generated-src/antlr"/>
+        <property name="gen.dir" value="src/generated"/>
     
         <target name="generate-antlr">
             <mkdir dir="${gen.dir}"/>

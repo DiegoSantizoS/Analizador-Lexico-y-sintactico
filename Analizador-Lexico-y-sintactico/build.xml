@@ -70,4 +70,26 @@
     nbproject/build-impl.xml file. 
 
     -->
+        <property name="antlr.jar" value="lib/antlr-4.13.2-complete.jar"/>
+        <property name="grammar.file" value="src/grammar/Lenguaje.g4"/>
+        <property name="gen.dir" value="build/generated-src/antlr"/>
+    
+        <target name="generate-antlr">
+            <mkdir dir="${gen.dir}"/>
+            <java classname="org.antlr.v4.Tool" fork="true" failonerror="true">
+                <classpath>
+                    <pathelement path="${antlr.jar}"/>
+                </classpath>
+    
+                <arg value="-o"/>
+                <arg value="${gen.dir}"/>
+    
+                <arg value="-visitor"/>
+    
+                <arg value="${grammar.file}"/>
+            </java>
+        </target>
+    
+        <!-- Hook into NetBeans/Ant build so it runs automatically -->
+        <target name="-pre-compile" depends="generate-antlr"/>
 </project>

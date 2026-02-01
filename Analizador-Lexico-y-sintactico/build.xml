@@ -85,6 +85,9 @@
                 <arg value="${gen.dir}"/>
     
                 <arg value="-visitor"/>
+
+                <arg value="-package"/>
+                <arg value="generated"/>
     
                 <arg value="${grammar.file}"/>
             </java>

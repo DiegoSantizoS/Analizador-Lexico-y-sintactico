@@ -5,7 +5,7 @@
 package PRUEBA;
 
 /**
- *
+ *lol xd
  * @author DFSS
  */
 public class NewClass {

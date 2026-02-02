@@ -17,181 +17,241 @@ public class LenguajeBaseListener implements LenguajeListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProgram(LenguajeParser.ProgramContext ctx) { }
+	@Override public void enterPrograma(LenguajeParser.ProgramaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProgram(LenguajeParser.ProgramContext ctx) { }
+	@Override public void exitPrograma(LenguajeParser.ProgramaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatement(LenguajeParser.StatementContext ctx) { }
+	@Override public void enterSentencia(LenguajeParser.SentenciaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatement(LenguajeParser.StatementContext ctx) { }
+	@Override public void exitSentencia(LenguajeParser.SentenciaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDecl(LenguajeParser.DeclContext ctx) { }
+	@Override public void enterDeclaracion(LenguajeParser.DeclaracionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDecl(LenguajeParser.DeclContext ctx) { }
+	@Override public void exitDeclaracion(LenguajeParser.DeclaracionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssign(LenguajeParser.AssignContext ctx) { }
+	@Override public void enterTipo(LenguajeParser.TipoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssign(LenguajeParser.AssignContext ctx) { }
+	@Override public void exitTipo(LenguajeParser.TipoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrintStmt(LenguajeParser.PrintStmtContext ctx) { }
+	@Override public void enterAsignacion(LenguajeParser.AsignacionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrintStmt(LenguajeParser.PrintStmtContext ctx) { }
+	@Override public void exitAsignacion(LenguajeParser.AsignacionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIfStmt(LenguajeParser.IfStmtContext ctx) { }
+	@Override public void enterImprimir(LenguajeParser.ImprimirContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIfStmt(LenguajeParser.IfStmtContext ctx) { }
+	@Override public void exitImprimir(LenguajeParser.ImprimirContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWhileStmt(LenguajeParser.WhileStmtContext ctx) { }
+	@Override public void enterSi(LenguajeParser.SiContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWhileStmt(LenguajeParser.WhileStmtContext ctx) { }
+	@Override public void exitSi(LenguajeParser.SiContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlock(LenguajeParser.BlockContext ctx) { }
+	@Override public void enterMientras(LenguajeParser.MientrasContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBlock(LenguajeParser.BlockContext ctx) { }
+	@Override public void exitMientras(LenguajeParser.MientrasContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNumber(LenguajeParser.NumberContext ctx) { }
+	@Override public void enterBloque(LenguajeParser.BloqueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNumber(LenguajeParser.NumberContext ctx) { }
+	@Override public void exitBloque(LenguajeParser.BloqueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParens(LenguajeParser.ParensContext ctx) { }
+	@Override public void enterSentenciaBloque(LenguajeParser.SentenciaBloqueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParens(LenguajeParser.ParensContext ctx) { }
+	@Override public void exitSentenciaBloque(LenguajeParser.SentenciaBloqueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCompare(LenguajeParser.CompareContext ctx) { }
+	@Override public void enterExpresion(LenguajeParser.ExpresionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCompare(LenguajeParser.CompareContext ctx) { }
+	@Override public void exitExpresion(LenguajeParser.ExpresionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterString(LenguajeParser.StringContext ctx) { }
+	@Override public void enterOrExpr(LenguajeParser.OrExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitString(LenguajeParser.StringContext ctx) { }
+	@Override public void exitOrExpr(LenguajeParser.OrExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAddSub(LenguajeParser.AddSubContext ctx) { }
+	@Override public void enterAndExpr(LenguajeParser.AndExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAddSub(LenguajeParser.AddSubContext ctx) { }
+	@Override public void exitAndExpr(LenguajeParser.AndExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterId(LenguajeParser.IdContext ctx) { }
+	@Override public void enterIgualdad(LenguajeParser.IgualdadContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitId(LenguajeParser.IdContext ctx) { }
+	@Override public void exitIgualdad(LenguajeParser.IgualdadContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMulDiv(LenguajeParser.MulDivContext ctx) { }
+	@Override public void enterComparacion(LenguajeParser.ComparacionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMulDiv(LenguajeParser.MulDivContext ctx) { }
+	@Override public void exitComparacion(LenguajeParser.ComparacionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSuma(LenguajeParser.SumaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSuma(LenguajeParser.SumaContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMult(LenguajeParser.MultContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMult(LenguajeParser.MultContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterUnario(LenguajeParser.UnarioContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitUnario(LenguajeParser.UnarioContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPrimario(LenguajeParser.PrimarioContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPrimario(LenguajeParser.PrimarioContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterLeer(LenguajeParser.LeerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLeer(LenguajeParser.LeerContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

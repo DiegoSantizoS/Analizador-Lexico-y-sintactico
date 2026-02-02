@@ -11,100 +11,123 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface LenguajeVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link LenguajeParser#program}.
+	 * Visit a parse tree produced by {@link LenguajeParser#programa}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitProgram(LenguajeParser.ProgramContext ctx);
+	T visitPrograma(LenguajeParser.ProgramaContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LenguajeParser#statement}.
+	 * Visit a parse tree produced by {@link LenguajeParser#sentencia}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStatement(LenguajeParser.StatementContext ctx);
+	T visitSentencia(LenguajeParser.SentenciaContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LenguajeParser#decl}.
+	 * Visit a parse tree produced by {@link LenguajeParser#declaracion}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDecl(LenguajeParser.DeclContext ctx);
+	T visitDeclaracion(LenguajeParser.DeclaracionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LenguajeParser#assign}.
+	 * Visit a parse tree produced by {@link LenguajeParser#tipo}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAssign(LenguajeParser.AssignContext ctx);
+	T visitTipo(LenguajeParser.TipoContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LenguajeParser#printStmt}.
+	 * Visit a parse tree produced by {@link LenguajeParser#asignacion}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrintStmt(LenguajeParser.PrintStmtContext ctx);
+	T visitAsignacion(LenguajeParser.AsignacionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LenguajeParser#ifStmt}.
+	 * Visit a parse tree produced by {@link LenguajeParser#imprimir}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitIfStmt(LenguajeParser.IfStmtContext ctx);
+	T visitImprimir(LenguajeParser.ImprimirContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LenguajeParser#whileStmt}.
+	 * Visit a parse tree produced by {@link LenguajeParser#si}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitWhileStmt(LenguajeParser.WhileStmtContext ctx);
+	T visitSi(LenguajeParser.SiContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link LenguajeParser#block}.
+	 * Visit a parse tree produced by {@link LenguajeParser#mientras}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitBlock(LenguajeParser.BlockContext ctx);
+	T visitMientras(LenguajeParser.MientrasContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code number}
-	 * labeled alternative in {@link LenguajeParser#expr}.
+	 * Visit a parse tree produced by {@link LenguajeParser#bloque}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNumber(LenguajeParser.NumberContext ctx);
+	T visitBloque(LenguajeParser.BloqueContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code parens}
-	 * labeled alternative in {@link LenguajeParser#expr}.
+	 * Visit a parse tree produced by {@link LenguajeParser#sentenciaBloque}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParens(LenguajeParser.ParensContext ctx);
+	T visitSentenciaBloque(LenguajeParser.SentenciaBloqueContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code compare}
-	 * labeled alternative in {@link LenguajeParser#expr}.
+	 * Visit a parse tree produced by {@link LenguajeParser#expresion}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCompare(LenguajeParser.CompareContext ctx);
+	T visitExpresion(LenguajeParser.ExpresionContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code string}
-	 * labeled alternative in {@link LenguajeParser#expr}.
+	 * Visit a parse tree produced by {@link LenguajeParser#orExpr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitString(LenguajeParser.StringContext ctx);
+	T visitOrExpr(LenguajeParser.OrExprContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code addSub}
-	 * labeled alternative in {@link LenguajeParser#expr}.
+	 * Visit a parse tree produced by {@link LenguajeParser#andExpr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAddSub(LenguajeParser.AddSubContext ctx);
+	T visitAndExpr(LenguajeParser.AndExprContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code id}
-	 * labeled alternative in {@link LenguajeParser#expr}.
+	 * Visit a parse tree produced by {@link LenguajeParser#igualdad}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitId(LenguajeParser.IdContext ctx);
+	T visitIgualdad(LenguajeParser.IgualdadContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code mulDiv}
-	 * labeled alternative in {@link LenguajeParser#expr}.
+	 * Visit a parse tree produced by {@link LenguajeParser#comparacion}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitMulDiv(LenguajeParser.MulDivContext ctx);
+	T visitComparacion(LenguajeParser.ComparacionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LenguajeParser#suma}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSuma(LenguajeParser.SumaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LenguajeParser#mult}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMult(LenguajeParser.MultContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LenguajeParser#unario}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUnario(LenguajeParser.UnarioContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LenguajeParser#primario}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrimario(LenguajeParser.PrimarioContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link LenguajeParser#leer}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLeer(LenguajeParser.LeerContext ctx);
 }

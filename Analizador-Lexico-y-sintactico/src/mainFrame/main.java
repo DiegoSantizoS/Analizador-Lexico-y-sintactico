@@ -34,10 +34,11 @@ public class main extends javax.swing.JFrame {
         panelEditor = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        labelError = new javax.swing.JLabel();
         panelBotones = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnSubir = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnEjecutar = new javax.swing.JButton();
         panelNombres = new javax.swing.JPanel();
         nombreDiego = new javax.swing.JLabel();
         nombreCarlos = new javax.swing.JLabel();
@@ -49,13 +50,17 @@ public class main extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(605, 800));
+        setMinimumSize(new java.awt.Dimension(605, 800));
+        setPreferredSize(new java.awt.Dimension(605, 800));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         panelTitulo.setBackground(new java.awt.Color(255, 51, 51));
         panelTitulo.setLayout(new java.awt.GridBagLayout());
 
+        labelTitulo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelTitulo.setText("Analizador Léxico y sintáctico");
+        labelTitulo.setText("ANALIZADOR LÉXICO Y SINTÁCTICO");
         panelTitulo.add(labelTitulo, new java.awt.GridBagConstraints());
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -72,11 +77,18 @@ public class main extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(20, 20, 20, 20);
         panelEditor.add(jScrollPane1, gridBagConstraints);
+
+        labelError.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        labelError.setText("KJSDFKJASDFKJASDFÑLKSDJF");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 20);
+        panelEditor.add(labelError, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 1;
@@ -88,25 +100,28 @@ public class main extends javax.swing.JFrame {
         panelBotones.setBackground(new java.awt.Color(0, 0, 255));
         panelBotones.setLayout(new java.awt.GridBagLayout());
 
-        jButton1.setText("jButton1");
+        btnSubir.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnSubir.setText("SUBIR");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        panelBotones.add(jButton1, gridBagConstraints);
+        panelBotones.add(btnSubir, gridBagConstraints);
 
-        jButton2.setText("jButton2");
+        btnGuardar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnGuardar.setText("GUARDAR");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        panelBotones.add(jButton2, gridBagConstraints);
+        panelBotones.add(btnGuardar, gridBagConstraints);
 
-        jButton3.setText("jButton3");
+        btnEjecutar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnEjecutar.setText("EJECUTAR");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        panelBotones.add(jButton3, gridBagConstraints);
+        panelBotones.add(btnEjecutar, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 2;
@@ -118,35 +133,41 @@ public class main extends javax.swing.JFrame {
         panelNombres.setBackground(new java.awt.Color(255, 0, 255));
         panelNombres.setLayout(new java.awt.GridBagLayout());
 
+        nombreDiego.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         nombreDiego.setText("DIEGO FERNANDO SANTIZO SAMAYOA");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         panelNombres.add(nombreDiego, gridBagConstraints);
 
+        nombreCarlos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         nombreCarlos.setText("CARLOS ANDRÉS ARRIAZA LARA");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         panelNombres.add(nombreCarlos, gridBagConstraints);
 
+        nombreMiguel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         nombreMiguel.setText("MIGUEL DAVID CONTRERAS JACINTO");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         panelNombres.add(nombreMiguel, gridBagConstraints);
 
+        nombrePedro.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         nombrePedro.setText("PEDRO JOSÉ GÓMEZ VILLALOBOS");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         panelNombres.add(nombrePedro, gridBagConstraints);
 
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setText("0901-22-15950");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 15, 0, 0);
         panelNombres.add(jLabel1, gridBagConstraints);
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel2.setText("0901-23-13862");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -155,6 +176,7 @@ public class main extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 15, 0, 0);
         panelNombres.add(jLabel2, gridBagConstraints);
 
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setText("0901-22-3878");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -163,6 +185,7 @@ public class main extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 15, 0, 0);
         panelNombres.add(jLabel3, gridBagConstraints);
 
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel4.setText("0901-23-4868");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -207,15 +230,16 @@ public class main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnEjecutar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnSubir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel labelError;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel nombreCarlos;
     private javax.swing.JLabel nombreDiego;

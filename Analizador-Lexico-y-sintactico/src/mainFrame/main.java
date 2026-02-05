@@ -4,6 +4,10 @@
  */
 package mainFrame;
 
+import org.fife.ui.rsyntaxtextarea.*;
+import org.fife.ui.rtextarea.*;
+
+
 /**
  *
  * @author DFSS
@@ -11,12 +15,26 @@ package mainFrame;
 public class main extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(main.class.getName());
+    private org.fife.ui.rsyntaxtextarea.RSyntaxTextArea textArea = new RSyntaxTextArea();
 
     /**
      * Creates new form main
      */
     public main() {
         initComponents();
+        textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA);
+        textArea.setCodeFoldingEnabled(true);
+        textArea.setAntiAliasingEnabled(true);
+        textArea.setBracketMatchingEnabled(true);
+        textArea.setHighlightCurrentLine(true);
+        
+        textArea.setTabsEmulated(true);
+        textArea.setTabSize(4);
+
+        RTextScrollPane sp = new RTextScrollPane(textArea);
+        sp.setLineNumbersEnabled(true);
+        jScrollPane1.setViewportView(sp);
+
     }
 
     /**
@@ -32,9 +50,9 @@ public class main extends javax.swing.JFrame {
         panelTitulo = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
         panelEditor = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         labelError = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        javax.swing.JTextArea textArea = new RSyntaxTextArea();
         panelBotones = new javax.swing.JPanel();
         btnSubir = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
@@ -50,9 +68,7 @@ public class main extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(605, 800));
         setMinimumSize(new java.awt.Dimension(605, 800));
-        setPreferredSize(new java.awt.Dimension(605, 800));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         panelTitulo.setBackground(new java.awt.Color(255, 51, 51));
@@ -72,9 +88,15 @@ public class main extends javax.swing.JFrame {
         panelEditor.setBackground(new java.awt.Color(51, 255, 51));
         panelEditor.setLayout(new java.awt.GridBagLayout());
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        labelError.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        labelError.setText("KJSDFKJASDFKJASDFÑLKSDJF");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 20);
+        panelEditor.add(labelError, gridBagConstraints);
+
+        textArea.setColumns(20);
+        textArea.setRows(5);
+        jScrollPane1.setViewportView(textArea);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 1;
@@ -83,12 +105,6 @@ public class main extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(20, 20, 20, 20);
         panelEditor.add(jScrollPane1, gridBagConstraints);
-
-        labelError.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        labelError.setText("KJSDFKJASDFKJASDFÑLKSDJF");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 20);
-        panelEditor.add(labelError, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 1;
@@ -238,7 +254,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel labelError;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel nombreCarlos;

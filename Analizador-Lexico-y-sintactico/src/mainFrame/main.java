@@ -3,11 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package mainFrame;
-
+import com.formdev.flatlaf.FlatDarkLaf;
+import java.awt.Color;
+import java.awt.Font;
+import java.io.IOException;
 import org.fife.ui.rsyntaxtextarea.*;
+import org.fife.ui.rsyntaxtextarea.templates.CodeTemplate;
+import org.fife.ui.rsyntaxtextarea.templates.StaticCodeTemplate;
 import org.fife.ui.rtextarea.*;
-
-
+import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLightLaf;
+import java.awt.Insets;
+import javax.swing.UIManager;
 /**
  *
  * @author DFSS
@@ -16,11 +23,21 @@ public class main extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(main.class.getName());
     private org.fife.ui.rsyntaxtextarea.RSyntaxTextArea textArea = new RSyntaxTextArea();
-
     /**
      * Creates new form main
      */
     public main() {
+        try {
+            UIManager.setLookAndFeel(new FlatDarkLaf()); 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        UIManager.put("Button.arc", 16);          // roundness
+        UIManager.put ("Component.arc", 16);
+        UIManager.put("TextComponent.arc", 12);
+        UIManager.put("ScrollBar.thumbArc", 999);
+        UIManager.put("ScrollBar.thumbInsets", new Insets(2, 2, 2, 2));
         initComponents();
         textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA);
         textArea.setCodeFoldingEnabled(true);
@@ -34,8 +51,15 @@ public class main extends javax.swing.JFrame {
         RTextScrollPane sp = new RTextScrollPane(textArea);
         sp.setLineNumbersEnabled(true);
         jScrollPane1.setViewportView(sp);
-
-    }
+        
+        try {
+           Theme theme = Theme.load(getClass().getResourceAsStream(
+                 "/mainFrame/dark2.xml"));
+           theme.apply(textArea);
+        } catch (IOException ioe) { // Never happens
+           ioe.printStackTrace();
+        }
+      }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,175 +71,91 @@ public class main extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        panelTitulo = new javax.swing.JPanel();
-        labelTitulo = new javax.swing.JLabel();
-        panelEditor = new javax.swing.JPanel();
-        labelError = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
-        javax.swing.JTextArea textArea = new RSyntaxTextArea();
-        panelBotones = new javax.swing.JPanel();
-        btnSubir = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
-        btnEjecutar = new javax.swing.JButton();
-        panelNombres = new javax.swing.JPanel();
-        nombreDiego = new javax.swing.JLabel();
-        nombreCarlos = new javax.swing.JLabel();
-        nombreMiguel = new javax.swing.JLabel();
-        nombrePedro = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        javax.swing.JTextArea jTextArea1 = new RSyntaxTextArea();
+        jPanel2 = new javax.swing.JPanel();
+        jToolBar1 = new javax.swing.JToolBar();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(605, 800));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        panelTitulo.setBackground(new java.awt.Color(255, 51, 51));
-        panelTitulo.setLayout(new java.awt.GridBagLayout());
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        labelTitulo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        labelTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelTitulo.setText("ANALIZADOR LÉXICO Y SINTÁCTICO");
-        panelTitulo.add(labelTitulo, new java.awt.GridBagConstraints());
+        jTabbedPane1.setOpaque(true);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.05;
-        getContentPane().add(panelTitulo, gridBagConstraints);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
-        panelEditor.setBackground(new java.awt.Color(51, 255, 51));
-        panelEditor.setLayout(new java.awt.GridBagLayout());
+        jTabbedPane1.addTab("file1", jScrollPane1);
 
-        labelError.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        labelError.setText("KJSDFKJASDFKJASDFÑLKSDJF");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 0, 20);
-        panelEditor.add(labelError, gridBagConstraints);
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 427, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 191, Short.MAX_VALUE)
+        );
 
-        textArea.setColumns(20);
-        textArea.setRows(5);
-        jScrollPane1.setViewportView(textArea);
+        jTabbedPane1.addTab("+", jPanel2);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(20, 20, 20, 20);
-        panelEditor.add(jScrollPane1, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.8;
-        getContentPane().add(panelEditor, gridBagConstraints);
-
-        panelBotones.setBackground(new java.awt.Color(0, 0, 255));
-        panelBotones.setLayout(new java.awt.GridBagLayout());
-
-        btnSubir.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnSubir.setText("SUBIR");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        panelBotones.add(btnSubir, gridBagConstraints);
-
-        btnGuardar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnGuardar.setText("GUARDAR");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        panelBotones.add(btnGuardar, gridBagConstraints);
-
-        btnEjecutar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        btnEjecutar.setText("EJECUTAR");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        panelBotones.add(btnEjecutar, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.1;
-        getContentPane().add(panelBotones, gridBagConstraints);
+        gridBagConstraints.weighty = 1.0;
+        jPanel1.add(jTabbedPane1, gridBagConstraints);
 
-        panelNombres.setBackground(new java.awt.Color(255, 0, 255));
-        panelNombres.setLayout(new java.awt.GridBagLayout());
+        jToolBar1.setRollover(true);
 
-        nombreDiego.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        nombreDiego.setText("DIEGO FERNANDO SANTIZO SAMAYOA");
+        jButton1.setText("*CORRER*");
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton1);
+
+        jButton3.setText("*BUSCAR*");
+        jButton3.setFocusable(false);
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton3);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        panelNombres.add(nombreDiego, gridBagConstraints);
-
-        nombreCarlos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        nombreCarlos.setText("CARLOS ANDRÉS ARRIAZA LARA");
-        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        panelNombres.add(nombreCarlos, gridBagConstraints);
-
-        nombreMiguel.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        nombreMiguel.setText("MIGUEL DAVID CONTRERAS JACINTO");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        panelNombres.add(nombreMiguel, gridBagConstraints);
-
-        nombrePedro.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        nombrePedro.setText("PEDRO JOSÉ GÓMEZ VILLALOBOS");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        panelNombres.add(nombrePedro, gridBagConstraints);
-
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel1.setText("0901-22-15950");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 15, 0, 0);
-        panelNombres.add(jLabel1, gridBagConstraints);
-
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel2.setText("0901-23-13862");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 15, 0, 0);
-        panelNombres.add(jLabel2, gridBagConstraints);
-
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel3.setText("0901-22-3878");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 15, 0, 0);
-        panelNombres.add(jLabel3, gridBagConstraints);
-
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel4.setText("0901-23-4868");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 15, 0, 0);
-        panelNombres.add(jLabel4, gridBagConstraints);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 0.05;
-        getContentPane().add(panelNombres, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(0, 30, 0, 0);
+        jPanel1.add(jToolBar1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        getContentPane().add(jPanel1, gridBagConstraints);
+
+        jMenuBar1.setOpaque(true);
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -246,23 +186,15 @@ public class main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEjecutar;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnSubir;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel labelError;
-    private javax.swing.JLabel labelTitulo;
-    private javax.swing.JLabel nombreCarlos;
-    private javax.swing.JLabel nombreDiego;
-    private javax.swing.JLabel nombreMiguel;
-    private javax.swing.JLabel nombrePedro;
-    private javax.swing.JPanel panelBotones;
-    private javax.swing.JPanel panelEditor;
-    private javax.swing.JPanel panelNombres;
-    private javax.swing.JPanel panelTitulo;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }

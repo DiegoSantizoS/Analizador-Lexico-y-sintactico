@@ -54,7 +54,7 @@ public class main extends javax.swing.JFrame {
         
         try {
            Theme theme = Theme.load(getClass().getResourceAsStream(
-                 "/mainFrame/dark2.xml"));
+                 "/mainFrame/customDarkTheme.xml"));
            theme.apply(textArea);
         } catch (IOException ioe) { // Never happens
            ioe.printStackTrace();
